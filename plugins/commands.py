@@ -23,8 +23,12 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                    InlineKeyboardButton('🚀 UPDATE CHANNEL🚀', url=f'http://t.me/ROCKERSBACKUP')
-                  ]]
+                    InlineKeyboardButton('🚀 UPDATE CHANNEL 🚀', url=f'http://t.me/ROCKERSBACKUP')
+                  ][
+                    InlineKeyboardButton('🍿 Ott Movie Uploading 🍿', url=f'https://t.me/+D7L-rX9lKA43MGRl')
+                  ][
+                    InlineKeyboardButton('🔞 Adult Video Uploading 🔞', url=f'https://t.me/+Ce98xoyvoLcwYThl')
+                  ]]                
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup, disable_web_page_preview=True)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -37,8 +41,12 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        buttons = [[
-                    InlineKeyboardButton('🚀 UPDATE CHANNEL🚀', url=f'http://t.me/ROCKERSBACKUP')
+        buttons = buttons = [[
+                    InlineKeyboardButton('🚀 UPDATE CHANNEL 🚀', url=f'http://t.me/ROCKERSBACKUP')
+                  ][
+                    InlineKeyboardButton('🍿 Ott Movie Uploading 🍿', url=f'https://t.me/+D7L-rX9lKA43MGRl')
+                  ][
+                    InlineKeyboardButton('🔞 Adult Video Uploading 🔞', url=f'https://t.me/+Ce98xoyvoLcwYThl')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)        
         await message.reply_photo(
