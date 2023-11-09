@@ -54,12 +54,12 @@ SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'shareus.io')
 SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '1VykTPGi38gGZtJufYaOXWroTOh2')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
-MAX_B_TN = environ.get("MAX_B_TN", "10")
+MAX_B_TN = environ.get("MAX_B_TN", "6")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+f0w-7Ss3RIlhOGRl')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/ROCKERSBACKUP')
-TUTORIAL = environ.get('TUTORIAL', 'https://t.me/ROCKERSBACKUP')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/+-IZBIMDDMnVhZjFl')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
 MSG_ALRT = environ.get('MSG_ALRT', '🚀 ROCKERSBACKUP 🚀')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
@@ -81,7 +81,7 @@ MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
 PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "True")), True)
 
-LANGUAGES = ["malayalam", "mal", "tamil", "tam" ,"english", "eng", "hindi", "hin", "telugu", "tel", "kannada", "kan"]
+LANGUAGES = ["kannada", "tamil", "telugu", "malayalam", "hindi", "english", "Punjabi", "gujarathi", "marathi"]
 
 SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "season 6" , "season 7" , "season 8" , "season 9" , "season 10"]
 
