@@ -1,12 +1,7 @@
 class script(object):
-    START_TXT = """<b>Hᴇʟʟᴏ {},
-Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, I Cᴀɴ Pʀᴏᴠɪᴅᴇ Mᴏᴠɪᴇs, Jᴜsᴛ Aᴅᴅ Mᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ 
-
-u can also add ur shartner and earn money 
-
-Format:- /shortlink OnePageLink.in 6e8c7bd83339d97a5a695a66effd5b5cf2382057 
-
-🚀 𝐌𝐚𝐢𝐧𝐭𝐚𝐢𝐧𝐞𝐝 𝐁𝐲 : <a href='https://t.me/alonekingjnanesh'>jnanesh gowda</a></b>"""
+    START_TXT = """<b>I am autofilterbot With Shartner Support So u can Add Ur shartner and earn money for more information Join Belo Updated Channel 
+    
+    🫂 my Creator  :- @alonekingjnanesh </b>"""
 
     HELP_TXT = """<b>Hᴇʏ {}
 Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.
