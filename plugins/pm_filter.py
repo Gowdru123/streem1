@@ -99,7 +99,7 @@ async def next_page(bot, query):
     else:
         search = FRESH.get(key)
     if not search:
-        await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=True)
+        await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=False)
         return
 
     files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=offset, filter=True)
@@ -123,7 +123,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('CineVood.') and not x.startswith('-') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -261,9 +261,9 @@ async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
-        return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+        return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=False)
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
+        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=False)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movie = movies[(int(movie_))]
@@ -296,7 +296,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
                 f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
-                show_alert=False,
+                show_alert=True,
             )
     except:
         pass
@@ -388,7 +388,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}",
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
@@ -593,7 +593,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -602,7 +602,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}",
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
@@ -1026,7 +1026,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             search = FRESH.get(key)
         if not search:
-            await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=True)
+            await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name),show_alert=False)
             return
         files, n_offset, total = await get_search_results(query.message.chat.id, search, offset=int(offset), filter=True)
         await send_all(client, query.from_user.id, files, ident, query.message.chat.id, query.from_user.first_name, query)
@@ -1891,7 +1891,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -1971,10 +1971,10 @@ async def auto_filter(client, msg, spoll=False):
         )
         #else:
     if settings["button"]:
-        cap = f"<b>🍿𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}</b>\n</b>"
+        cap = f"<b>🍿 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}</b>\n</b>"
     else:
-        #cap = f"<b>🍿𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}\n</b>"    
-        cap = f"<b>🍿𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}</b>\n</b>" 
+        #cap = f"<b>🍿 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}\n</b>"    
+        cap = f"<b>🍿 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐌𝐎𝐕𝐈𝐄 ➢ {search} </b>\n<b>👥 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏 ➢ {message.chat.title} </b>\n<b>🫂 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐏𝐄𝐑𝐒𝐎𝐍 ➢ {message.from_user.mention}</b>\n</b>" 
         for file in files:
             cap += f"<b>🚀 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>{get_size(file.file_size)}➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}\n\n</a></b>"
     
