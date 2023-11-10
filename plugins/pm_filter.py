@@ -123,7 +123,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('CineVood.') and not x.startswith('-') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -379,7 +379,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('MKV') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"{get_size(file.file_size)} ➢ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('.MKV') and not x.startswith('.mkv') and not x.startswith('-') and not x.startswith('CineVood.') and not x.startswith('GB') and not x.startswith('MB') and not x.startswith('400MB') and not x.startswith('500MB') and not x.startswith('600MB') and not x.startswith('700MB') and not x.startswith('800MB') and not x.startswith('900MB') and not x.startswith('1GB') and not x.startswith('1.2GB') and not x.startswith('1.3GB') and not x.startswith('1.4GB') and not x.startswith('1.5GB') and not x.startswith('1.6GB') and not x.startswith('1.7GB') and not x.startswith('1.8GB') and not x.startswith('1.9GB') and not x.startswith('2GB') and not x.startswith('2.5GB') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
