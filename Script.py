@@ -1,5 +1,5 @@
 class script(object):
-    START_TXT = """<b>I am autofilterbot With Shartner Support So u can Add Ur shartner and earn money for more information Join Belo Updated Channel 
+    START_TXT = """<b>I am autofilterbot With Shartner Support So u can Add Ur shartner and earn money for more information Join Below My Updated Channel 
     
     🫂 my Creator  :- @alonekingjnanesh </b>"""
 
